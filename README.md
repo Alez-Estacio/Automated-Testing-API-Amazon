@@ -2,7 +2,7 @@
 
 Este repositorio contiene pruebas escritas en Postman para validar una API.
 
-Contiene las siguientes pruebas:
+Contiene las siguientes pruebas ejecutadas en el lenguaje de JavaScript:
 
 1. Verificar código de estado para GET: Verifica que el código de estado para una solicitud GET sea 200.
 2. Validar formato de respuesta JSON: Verifica que la respuesta sea en formato JSON.
