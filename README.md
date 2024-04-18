@@ -2,8 +2,6 @@
 
 Este repositorio contiene pruebas escritas en Postman para validar una API.
 
-# Pruebas
-
 Contiene las siguientes pruebas:
 
 1. Verificar código de estado para GET: Verifica que el código de estado para una solicitud GET sea 200.
