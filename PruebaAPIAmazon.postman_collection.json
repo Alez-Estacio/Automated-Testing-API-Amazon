@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "98890dd1-6457-446f-bca8-098072871ff9",
+		"name": "Validando API Amazon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34226799",
+		"_collection_link": "https://interstellar-resonance-688399.postman.co/workspace/Buggy-cars-APIS~b9f99919-1851-41b2-b8f7-a3baec703c48/collection/34226799-98890dd1-6457-446f-bca8-098072871ff9?action=share&source=collection_link&creator=34226799"
+	},
+	"item": [
+		{
+			"name": "API Preferencias del Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Prueba para verificar el código de estado para una solicitud GET a la API\r",
+							"pm.test(\"Verificar código de estado para GET\", function () {\r",
+							"    pm.response.to.have.status(200); // Verifica que el código de estado sea 200\r",
+							"});\r",
+							"\r",
+							"// Prueba para validar el formato de respuesta JSON\r",
+							"pm.test(\"Validar formato de respuesta JSON\", function () {\r",
+							"    pm.response.to.be.json; // Verifica que la respuesta sea en formato JSON\r",
+							"});\r",
+							"\r",
+							"// Prueba para confirmar que la respuesta contiene información esperada\r",
+							"pm.test(\"Comprobar información en la respuesta\", function () {\r",
+							"    var jsonData = pm.response.json(); // Obtiene la respuesta como un objeto JSON\r",
+							"    pm.expect(jsonData.someProperty).to.eql(\"expectedValue\"); // Verifica que alguna propiedad tenga el valor esperado\r",
+							"});\r",
+							"\r",
+							"// Prueba para ejecutar casos de uso básicos\r",
+							"pm.test(\"Probar casos de uso básicos\", function () {\r",
+							"    // Aquí se pueden agregar más pruebas para cubrir diferentes casos de uso\r",
+							"});\r",
+							"\r",
+							"// Prueba para medir el tiempo de respuesta\r",
+							"pm.test(\"Evaluar tiempo de respuesta\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200); // Verifica que el tiempo de respuesta sea menor a 200 ms\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Assuming you have the necessary authentication mechanisms or credentials\r",
+							"pm.sendRequest({\r",
+							"  \"method\": \"GET\",\r",
+							"  \"url\": \"https://developer.amazon.com/docs/amazon-drive/ad-restful-api-getting-started.html\",\r",
+							"  \"headers\": {\r",
+							"    \"Authorization\": \"YOUR_AUTH_TOKEN\", // Replace with your actual auth token\r",
+							"    \"Accept\": \"application/json\" // Adjust the content type as needed\r",
+							"  }\r",
+							"}, function (err, response) {\r",
+							"  if (err) {\r",
+							"    console.error(\"Error sending request:\", err);\r",
+							"  } else {\r",
+							"    // Check if the response is JSON format\r",
+							"    if (response.headers[\"Content-Type\"] && response.headers[\"Content-Type\"].includes(\"application/json\")) {\r",
+							"      console.log(\"Response status code:\", response.code);\r",
+							"      console.log(\"Response headers:\", response.headers);\r",
+							"      console.log(\"Response body (JSON):\", response.json()); // Parse JSON response\r",
+							"\r",
+							"      // Perform assertions, validations, or further analysis based on the response\r",
+							"    } else {\r",
+							"      // Handle non-JSON responses, such as HTML\r",
+							"      console.log(\"Response status code:\", response.code);\r",
+							"      console.log(\"Response headers:\", response.headers);\r",
+							"      console.log(\"Response body (HTML):\", response.text()); // Treat response as text\r",
+							"\r",
+							"      // Perform appropriate processing or error handling for HTML content\r",
+							"    }\r",
+							"  }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.amazon.com/customer-preferences/api/flyout/xop-and-country?icpContent=icp&_=1713389181507\n",
+					"protocol": "https",
+					"host": [
+						"www",
+						"amazon",
+						"com"
+					],
+					"path": [
+						"customer-preferences",
+						"api",
+						"flyout",
+						"xop-and-country"
+					],
+					"query": [
+						{
+							"key": "icpContent",
+							"value": "icp"
+						},
+						{
+							"key": "_",
+							"value": "1713389181507\n"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
