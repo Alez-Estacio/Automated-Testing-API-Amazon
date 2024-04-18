@@ -1,13 +1,22 @@
 # Prueba-Automatizada-API-Amazon
 
-Esta API  se le realizaron las siguientes pruebas en Postman:
+Este repositorio contiene pruebas escritas en Postman para validar una API.
 
-Prueba para verificar el código de estado para una solicitud GET a la API
+# Pruebas
 
-Prueba para validar el formato de respuesta JSON
+Contiene las siguientes pruebas:
 
-Prueba para confirmar que la respuesta contiene información esperada
+1. Verificar código de estado para GET: Verifica que el código de estado para una solicitud GET sea 200.
+2. Validar formato de respuesta JSON: Verifica que la respuesta sea en formato JSON.
+3. Comprobar información en la respuesta: Verifica que la respuesta contenga la información esperada.
+4. Probar casos de uso básicos: Se pueden agregar más pruebas para cubrir diferentes casos de uso.
+5. Evaluar tiempo de respuesta: Verifica que el tiempo de respuesta sea menor a 200 ms.
 
-Prueba para ejecutar casos de uso básicos
+## Uso
 
-Prueba para medir el tiempo de respuesta
+Puedes ejecutar estas pruebas en tu entorno de desarrollo de Postman para asegurarte de que tu API cumpla con los criterios de calidad esperados.
+
+## Contribución
+
+Si deseas contribuir con más pruebas o mejoras, ¡siéntete libre de hacerlo! Abre un issue o envía una solicitud de extracción (pull request).
+
