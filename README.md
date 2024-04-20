@@ -1,4 +1,4 @@
-# Automated-Testing-API-Amazon
+# Prueba-Automatizada-API-Amazon
 
 Este repositorio contiene pruebas escritas en Postman para validar una API.
 
